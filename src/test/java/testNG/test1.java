@@ -18,12 +18,12 @@ public class test1 {
    }   */
 
 // For Practice
-   @Test
+   @Test (priority=1)
    public void OpenEnrollment1()   {
    System.out.println("Medical Coverages");	   
    }
 
-   @Test
+   @Test (priority=2)
    public void OpenEnrollment2()   {
    System.out.println("Dental Coverages");   
    Assert.assertTrue(false);
