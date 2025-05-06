@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+<listeners>
+<listener class-name="utilities.listeners"/>
+</listeners>
+  <test thread-count="5" name="Login Product Match">
+    <classes>
+      <class name="mvnFrameWorks.shoppingOrder1Test"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="Login Errors">
+    <classes>
+      <class name="mvnFrameWorks.loginValidationTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->
