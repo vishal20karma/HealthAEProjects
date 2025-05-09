@@ -5,7 +5,6 @@
     <classes>
       <class name="mvnFrameWorks.shoppingOrder1Test"/>
       <class name="mvnFrameWorks.loginValidationTest"/>
-      <class name="mvnFrameWorks.extentTesting"/>
-    </classes>
+      </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
