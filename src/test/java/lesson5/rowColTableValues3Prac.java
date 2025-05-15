@@ -29,15 +29,14 @@ public class rowColTableValues3Prac {
 	}
 
 	public static void getRowColData(WebDriver driver)   {
-	List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers'] //tr"));	
+	List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers'] //tr"));
 	for (int i=0;i<rows.size();i++)   {
 	if (i==4)   {
 	WebElement r4 = rows.get(4);
-	String s = r4.findElement(By.xpath("td[2]")).getText();   //in this case for xpath, no double slash required in the starting
+	String s = r4.findElement(By.xpath("td[2]")).getText();
 	System.out.println(s);
 	break;
 	}
 	}
-	
 	}
 }

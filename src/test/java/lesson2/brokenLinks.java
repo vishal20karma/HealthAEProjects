@@ -48,6 +48,7 @@ public class brokenLinks {
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 2000)");
 	String url = driver.findElement(By.cssSelector("a[href*='soapui']")).getDomAttribute("href");
+	System.out.println(url);
 	HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 	conn.setRequestMethod("HEAD");
 	conn.connect();
@@ -56,9 +57,10 @@ public class brokenLinks {
 	System.out.println("Link is broken");	
 	}
 	else {
-	System.out.println("Link is Active");	
+	System.out.println("Link is Active");
 	}
 	driver.quit();
+	
 	}
-
+	
 }

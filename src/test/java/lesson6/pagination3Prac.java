@@ -23,26 +23,23 @@ public class pagination3Prac {
     driver.findElement(By.xpath("//thead/tr/th[1]")).click();
     List<String> price;
     do {
-    
-    List<WebElement> orgList = driver.findElements(By.xpath("//tbody/tr"));	
-    price = orgList.stream().filter(s->getVeggie(s).contains("Rice")).map(s->getPrice(s)).collect(Collectors.toList());  
+    List<WebElement> orgList = driver.findElements(By.xpath("//tbody/tr"));
+    price = orgList.stream().filter(s->getVeggie(s).contains("Rice")).map(s->getPrice(s)).collect(Collectors.toList());
     price.forEach(a->System.out.println("Rice price: "+a));
     if (price.size()<1)   {
     driver.findElement(By.xpath("//a[@aria-label='Next']")).click();	
     }
-    
     } while (price.size()<1);
 	driver.quit();
+	} 
 	
-	}
-
-	public static String getVeggie(WebElement s)   {
+    public static String getVeggie(WebElement s)   {
 	String veggie = s.findElement(By.xpath("td[1]")).getText();	
 	return veggie;
 	}
 
     public static String getPrice(WebElement s)   {
-    String price = s.findElement(By.xpath("td[1]/following-sibling::td[1]")).getText();
+    String price = s.findElement(By.xpath("td[1]/following-sibling::td[1]")).getText();	
     return price;
     }
 

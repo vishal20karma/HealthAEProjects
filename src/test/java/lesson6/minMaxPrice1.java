@@ -41,7 +41,6 @@ public class minMaxPrice1 {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://www.saucedemo.com/v1/inventory.html");
 	List<WebElement> prices = driver.findElements(By.className("inventory_item_price"));
-	System.out.println("Total Items: "+prices.size());
 	double maxPrice = prices.stream().mapToDouble(d->Double.parseDouble(d.getText().replace("$", "")
 			.trim())).max().getAsDouble();
 	System.out.println(maxPrice);

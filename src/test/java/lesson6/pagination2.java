@@ -66,10 +66,10 @@ public class pagination2 {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 	ArrayList<Integer> arl = new ArrayList<Integer>();
-	String next = null;
+	String next=null;
 	do {
-	List<WebElement> prices = driver.findElements(By.xpath("//tbody/tr/td[2]"));
 	next = driver.findElement(By.xpath("//a[@aria-label='Next']")).getDomAttribute("aria-disabled");
+	List<WebElement> prices = driver.findElements(By.xpath("//tbody/tr/td[2]"));
 	List<Integer> priceList = prices.stream().map(s->Integer.parseInt(s.getText())).collect(Collectors.toList());
 	arl.addAll(priceList);
 	if (next.contains("false"))   {
@@ -77,7 +77,6 @@ public class pagination2 {
 	}
 	} while (next.contains("false"));
 	
-	System.out.println(arl);
 	int minPrice = arl.get(0);
 	int maxPrice = arl.get(0);
 	for (int i=1;i<arl.size();i++)   {

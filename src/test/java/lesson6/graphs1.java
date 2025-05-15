@@ -44,19 +44,16 @@ public class graphs1 {
 	driver.get("https://emicalculator.net/");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 1250)");
-	List<WebElement> bars = driver.findElements(By.xpath("(//*[local-name()='svg']//*[name()='g' "
-			+ "and @class='highcharts-series-group'])[2]//*[name()='rect']"));
-	String toolTips = "//*[local-name()='svg']//*[name()='g' and @class='highcharts-label highcharts-tooltip highcharts-color-undefined']//*[name()='text']";
-	System.out.println("Total bars on the graph: "+bars.size());
+	List<WebElement> bars = driver.findElements(By.xpath("(//*[local-name()='svg'] //*[name()='g' and @class='highcharts-series-group'])[2] //*[name()='rect']"));
+	String toolTips = "//*[local-name()='svg'] //*[name()='g' and @class='highcharts-label highcharts-tooltip highcharts-color-undefined'] //*[name()='text']";
 	Actions a = new Actions(driver);
 	for (WebElement s:bars)   {
-	a.moveToElement(s).build().perform();	
+	a.moveToElement(s).build().perform();
 	Thread.sleep(500);
 	String toolTipTxt = driver.findElement(By.xpath(toolTips)).getText();
 	System.out.println(toolTipTxt);
 	}
 	driver.quit();
-	
 	}
 
 }

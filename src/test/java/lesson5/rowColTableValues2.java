@@ -29,19 +29,18 @@ public class rowColTableValues2 {
 
 	public static void getRowColData(WebDriver driver)   {
 	List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr"));
-	List<WebElement> cols = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/th"));
+	List<WebElement> cols = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/th"));	
 	int k=1;
 	for (WebElement s:cols)   {
-	System.out.println("Header"+k+"-"+s.getText());
+	System.out.println("Header"+k+s.getText());	
 	k++;
 	}
 	for (int i=1;i<rows.size();i++)   {
 	for (int j=1;j<=cols.size();j++)   {
-	String dValue = driver.findElement(By.xpath("//table[@id='customers']/tbody/tr["+(i+1)+"]/td["+j+"]")).getText();	
-	System.out.println("Row:"+i+" : "+"Col"+j);
+	String dValue = driver.findElement(By.xpath("//table[@id='customers']/tbody/tr["+(i+1)+"]/td["+j+"]")).getText();
+	System.out.println("Row:"+i+" : "+"Col:"+j);
 	System.out.println(dValue);
 	}
 	}
-	
 	}
 }

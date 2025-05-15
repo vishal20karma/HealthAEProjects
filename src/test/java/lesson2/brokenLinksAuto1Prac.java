@@ -26,7 +26,11 @@ public class brokenLinksAuto1Prac {
 	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 2000)");
+	long stTime = System.currentTimeMillis();
 	brokenLinks(driver);
+	long endTime = System.currentTimeMillis();
+	System.out.println(("Total seconds: "+(endTime-stTime)/1000));
+	driver.quit();
 	
 	}
 
@@ -39,13 +43,12 @@ public class brokenLinksAuto1Prac {
 	conn.connect();
 	int rspCd = conn.getResponseCode();
 	if (rspCd>400)   {
-	System.out.println(url+" : "+rspCd);	
+	System.out.println(url+"-->"+rspCd+" : Broken link");	
 	}
 	else {
-	System.out.println(url+" : "+rspCd);	
+	System.out.println(url+"-->"+rspCd+" : Active link");	
 	}
 	}
-	
 	}
 	
 }

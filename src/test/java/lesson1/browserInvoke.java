@@ -29,7 +29,7 @@ public class browserInvoke {
 	WebDriver driver1 = new ChromeDriver();
 	driver1.manage().window().maximize();
 	driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	driver1.get("https://www.facebook.com");
+	driver1.get("https://www.facebook.com/");
 	System.out.println(driver1.getTitle());
 	System.out.println(driver1.getCurrentUrl());
 	Thread.sleep(2000);
@@ -38,8 +38,8 @@ public class browserInvoke {
 		
 /*	WebDriverManager.firefoxdriver().setup();
 	WebDriver driver2 = new FirefoxDriver();
-	driver2.get("https://www.facebook.com/");
 	driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver2.get("https://www.facebook.com/");
 	System.out.println(driver2.getTitle());
 	System.out.println(driver2.getCurrentUrl());
 	Thread.sleep(2000);
@@ -48,8 +48,8 @@ public class browserInvoke {
 //  For Practice	
 	WebDriverManager.firefoxdriver().setup();
 	WebDriver driver2 = new FirefoxDriver();
-	driver2.get("https://www.facebook.com/");
 	driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver2.get("https://www.facebook.com/");
 	System.out.println(driver2.getTitle());
 	System.out.println(driver2.getCurrentUrl());
 	Thread.sleep(2000);
@@ -70,13 +70,13 @@ public class browserInvoke {
 //  For Practice
 	WebDriverManager.edgedriver().setup();
 	WebDriver driver3 = new EdgeDriver();
-	driver3.get("https://www.facebook.com/");
 	driver3.manage().window().maximize();
 	driver3.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver3.get("https://www.facebook.com/");
 	System.out.println(driver3.getTitle());
 	System.out.println(driver3.getCurrentUrl());
 	Thread.sleep(2000);
-	driver3.quit();	
+	driver3.quit();
 	
 	}
 

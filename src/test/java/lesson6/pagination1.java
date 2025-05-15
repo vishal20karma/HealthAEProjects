@@ -66,10 +66,11 @@ public class pagination1 {
 //  For Practice
 	WebDriverManager.firefoxdriver().setup();
 	WebDriver driver = new FirefoxDriver();
+	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 	ArrayList<Integer> arl = new ArrayList<Integer>();
-	String next = null;
+	String next=null;
 	do {
 	List<WebElement> prices = driver.findElements(By.xpath("//tbody/tr/td[2]"));
 	next = driver.findElement(By.xpath("//a[@aria-label='Next']")).getDomAttribute("aria-disabled");
@@ -77,16 +78,15 @@ public class pagination1 {
 	for (WebElement p:prices)   {
 	arl.add(Integer.parseInt(p.getText()));
 	i++;
-	if (prices.size()==i && next.contains("false"))   {
+	if (i==prices.size() && next.contains("false"))   {
 	driver.findElement(By.xpath("//a[@aria-label='Next']")).click();
-	Thread.sleep(1000);
 	}
 	}
 	} while (next.contains("false"));
 	
 	System.out.println(arl);
-	int minPrice = arl.get(0);
-	int maxPrice = arl.get(0);
+	int minPrice=arl.get(0);
+	int maxPrice=arl.get(0);
 	for (int j=1;j<arl.size();j++)   {
 	if (arl.get(j)<minPrice)   {
 	minPrice=arl.get(j);	
@@ -98,7 +98,7 @@ public class pagination1 {
 	
 	Select s = new Select(driver.findElement(By.id("page-menu")));
 	s.selectByValue("20");
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	System.out.println("Minimum price: "+minPrice);
 	String s1 = driver.findElement(By.xpath("//tbody/tr/td[text()='"+minPrice+"']/preceding-sibling::td")).getText();
 	System.out.println(s1);
@@ -109,5 +109,4 @@ public class pagination1 {
 	driver.quit();
 	
 	}
-	
-}
+	}

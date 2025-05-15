@@ -26,7 +26,11 @@ public class brokenLinksAuto1 {
 	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 2000)");
+	long stTime = System.currentTimeMillis();
 	brokenLinks(driver);
+	long endTime = System.currentTimeMillis();
+	System.out.println("Total seconds - "+(endTime-stTime)/1000);
+	driver.quit();
 	
 	}
 

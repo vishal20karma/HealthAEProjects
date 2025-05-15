@@ -55,14 +55,15 @@ public class rowColTableValues6 {
 	List<WebElement> tValues = driver.findElements(By.cssSelector("div[class='tableFixHead'] td:nth-child(4)"));
 	int vSum=0;
 	for (int i=0;i<tValues.size();i++)   {
-	vSum=vSum+Integer.parseInt(tValues.get(i).getText());
+	String txVl = tValues.get(i).getText();
+	vSum=vSum+Integer.parseInt(txVl);
 	}
-	System.out.println("Calculated sum: "+vSum);
+	System.out.println("Calculated sum - "+vSum);
 	String s = driver.findElement(By.cssSelector("div[class='totalAmount']")).getText();
 	String [] sValue = s.split(":");
 	String fValue = sValue[1].trim();
 	int tValue = Integer.parseInt(fValue);
-	System.out.println("Total value: "+tValue);
+	System.out.println("Total sum - "+tValue);
 	Assert.assertEquals(vSum, tValue);
 	Thread.sleep(2000);
 	driver.quit();

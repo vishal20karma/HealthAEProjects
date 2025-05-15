@@ -19,20 +19,21 @@ public class pagination4Prac {
 
 	WebDriverManager.firefoxdriver().setup();
 	WebDriver driver = new FirefoxDriver();
-	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");		
-	driver.findElement(By.xpath("//thead/tr/th[1]")).click();
+	driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+	driver.findElement(By.xpath("(//thead/tr/th)[1]")).click();
 	ArrayList<String> vg = new ArrayList<String>();
 	ArrayList<String> pr = new ArrayList<String>();
 	String next=null;
+	List<String> veggies;
+	List<String> prices;
 	do {
-	next = driver.findElement(By.xpath("//a[@aria-label='Next']")).getDomAttribute("aria-disabled");	
+	next = driver.findElement(By.xpath("//a[@aria-label='Next']")).getDomAttribute("aria-disabled");
 	List<WebElement> orgList = driver.findElements(By.xpath("//tbody/tr"));
-	List<String> veggies = orgList.stream().map(s->getVeggie(s)).collect(Collectors.toList());
-	vg.addAll(veggies);
-	List<String> prices =  orgList.stream().map(s->getPrice(s)).collect(Collectors.toList());
-	pr.addAll(prices);
+    veggies = orgList.stream().map(s->getVeggie(s)).collect(Collectors.toList());
+    vg.addAll(veggies);
+	prices = orgList.stream().map(s->getPrice(s)).collect(Collectors.toList());
+	vg.addAll(prices);
 	if (next.contains("false"))   {
 	driver.findElement(By.xpath("//a[@aria-label='Next']")).click();
 	}
@@ -41,19 +42,17 @@ public class pagination4Prac {
 	System.out.println(vg);
 	System.out.println(pr);
 	for (int i=0;i<vg.size();i++)   {
-	System.out.println(vg.get(i)+" : "+pr.get(i));
-	driver.quit();
+	System.out.println(vg.get(i)+" : "+pr.get(i));	
 	}
-	
 	}
 
-	public static String getVeggie(WebElement s)   {
-	String veggies = s.findElement(By.xpath("td[1]")).getText();	
-	return veggies;
-	}
+    public static String getVeggie(WebElement s)   {
+    String vegValue = s.findElement(By.xpath("td[1]")).getText();	
+    return vegValue;
+    }
 
     public static String getPrice(WebElement s)   {
-    String price = s.findElement(By.xpath("td[1]/following-sibling::td[1]")).getText();	
-    return price;
+    String priceValue = s.findElement(By.xpath("//tbody/tr/td[1]/following-sibling::td[1]")).getText();	
+    return priceValue;
     }
 }

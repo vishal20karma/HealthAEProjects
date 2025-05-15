@@ -41,7 +41,7 @@ public class mouseActions {
 	driver.get("https://www.amazon.in/");
 	WebElement wb1 = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
 	WebElement wb2 = driver.findElement(By.id("twotabsearchtextbox"));
-	WebElement wb3 = driver.findElement(By.cssSelector(".icp-nav-flag.icp-nav-flag-in.icp-nav-flag-lop"));
+	WebElement wb3 = driver.findElement(By.cssSelector("span.icp-nav-flag.icp-nav-flag-in.icp-nav-flag-lop"));
 	Actions a = new Actions(driver);
 	a.moveToElement(wb1).build().perform();
 	Thread.sleep(1000);

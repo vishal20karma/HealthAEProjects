@@ -30,7 +30,6 @@ public class pagination3 {
     if (price.size()<1)   {
     driver.findElement(By.xpath("//a[@aria-label='Next']")).click();	
     }
-    
     } while (price.size()<1);
 	driver.quit();
 	

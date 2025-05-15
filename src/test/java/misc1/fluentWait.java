@@ -31,7 +31,7 @@ public class fluentWait {
 
     public static WebElement fWait(WebDriver driver)   {
     Wait<WebDriver> wt = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(20))
-    			.pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
+    			.pollingEvery(Duration.ofSeconds(4)).ignoring(NoSuchElementException.class);
     WebElement wb = driver.findElement(By.xpath("//div[@id='finish']/h4"));
     return wt.until(ExpectedConditions.visibilityOf(wb));   */
     		
@@ -50,7 +50,7 @@ public class fluentWait {
 
 	public static WebElement fWait(WebDriver driver)   {
 	Wait<WebDriver> wt = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(20))
-			    .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
+			    .pollingEvery(Duration.ofSeconds(4)).ignoring(NoSuchElementException.class);
 	WebElement wb = driver.findElement(By.xpath("//div[@id='finish']/h4"));
 	return wt.until(ExpectedConditions.visibilityOf(wb));
 	

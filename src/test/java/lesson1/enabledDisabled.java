@@ -38,14 +38,15 @@ public class enabledDisabled {
 	System.out.println(driver.findElement(By.id("Div1")).getDomAttribute("style"));
 	driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
 	if (driver.findElement(By.id("Div1")).getDomAttribute("style").contains("1"))   {
-	System.out.println("UI is enabled");
-	System.out.println(driver.findElement(By.id("Div1")).getDomAttribute("style"));
+	System.out.println("UI is enabled");	
 	}
 	else {
-	System.out.println("UI is disabled");	
+	System.out.println("UI is disabled");
 	}
+	System.out.println(driver.findElement(By.id("Div1")).getDomAttribute("style"));
 	Thread.sleep(2000);
 	driver.quit();
+	
 	}
 
 }

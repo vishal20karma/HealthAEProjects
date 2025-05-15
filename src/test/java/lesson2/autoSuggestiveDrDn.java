@@ -37,16 +37,16 @@ public class autoSuggestiveDrDn {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 	driver.findElement(By.xpath("//input[@id='autosuggest']")).sendKeys("mal");
-	List<WebElement> autoSg = driver.findElements(By.xpath("//li[@class='ui-menu-item']"));
+	List<WebElement> autoSg = driver.findElements(By.xpath("//li[@class='ui-menu-item']/a"));
 	for (int i=0;i<autoSg.size();i++)   {
 	String s = autoSg.get(i).getText();	
 	if (s.equalsIgnoreCase("somalia"))   {
-	autoSg.get(i).click();	
+	autoSg.get(i).click();
+	break;
 	}
 	}
 	Thread.sleep(2000);
 	driver.quit();
-	
 	}
 
 }

@@ -27,22 +27,21 @@ public class rowColTableValues5 {
 	js.executeScript("window.scrollBy(0, 300)");
 	String dataValue = "Helen Bennett";
 	getRowColData(driver, dataValue);
+	driver.quit();
 		
 	}
 
 	public static void getRowColData(WebDriver driver, String dataValue)   {
 	List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr"));
 	List<WebElement> cols = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/th"));	
-	for (int i=1;i<rows.size();i++)   {   //Always use i=1 for table rows/col iterations
-	for (int j=1;j<cols.size();j++)   {
+	for (int i=1;i<rows.size();i++)   {
+	for (int j=1;j<=cols.size();j++)   {
 	String dValue = driver.findElement
-			(By.xpath("//table[@id='customers']/tbody/tr["+(i+1)+"]/td["+j+"]")).getText();	
+			(By.xpath("//table[@id='customers']/tbody/tr["+(i+1)+"]/td["+j+"]")).getText();
 	if (dValue.equals(dataValue))   {
-	System.out.println("nth Row:"+i+" : "+"nth Col:"+j);
-	break;
+	System.out.println("nth Row:"+i+" : "+"nth Col:"+j);	
 	}
 	}
 	}
-	
 	}
 }

@@ -41,6 +41,5 @@ public class framesGenPrac {
 	a.dragAndDrop(drags.get(j), dropBx).build().perform();	
 	}
 	}
-	
 	}
 }

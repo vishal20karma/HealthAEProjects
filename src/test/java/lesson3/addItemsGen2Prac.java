@@ -27,7 +27,7 @@ public class addItemsGen2Prac {
 	WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(10));
 	String [] prdItems = {"Cucumber", "Tomato", "Apple", "Banana", "Nuts Mixture"};
 	List<String> neededList = Arrays.asList(prdItems);
-	addItems(driver, neededList);
+	getVeggies(driver, neededList);	
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//img[@alt='Cart']")).click();
 	driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
@@ -42,22 +42,21 @@ public class addItemsGen2Prac {
 	
 	}
 
-	public static void addItems(WebDriver driver, List<String> neededList)   {
-	List<WebElement> products = driver.findElements(By.xpath("//h4[@class='product-name']"));	
-	int j=0;
-	for (int i=0;i<products.size();i++)   {
-	String prdNames = products.get(i).getText();	
-	String [] spltNames = prdNames.split("-");
-	String frmNames = spltNames[0].trim();
-	if (neededList.contains(frmNames))   {
-	System.out.println(frmNames);
-	driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
-	j++;
-	if (j==neededList.size())   {
-	break;	
-	}
-	}
-	}
-	
-	}
+    public static void getVeggies(WebDriver driver, List<String> neededList)   {
+    List<WebElement> products = driver.findElements(By.xpath("//h4[@class='product-name']"));
+    int j=0;
+    for (int i=0;i<products.size();i++)   {
+    String prdNames = products.get(i).getText();	
+    String [] spltNames = prdNames.split("-");
+    String frmNames = spltNames[0].trim();
+    if (neededList.contains(frmNames))   {
+    driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
+    j++;
+    if (j==neededList.size())   {
+    break;
+    }
+    }
+    }
+    
+    }
 }

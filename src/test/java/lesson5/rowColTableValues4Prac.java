@@ -33,13 +33,12 @@ public class rowColTableValues4Prac {
 	for (int i=0;i<rows.size();i++)   {
 	if (i==4)   {
 	WebElement r4 = rows.get(4);
-	List<WebElement> clValues = r4.findElements(By.xpath("td"));   //in this case for xpath, no double slash required in the starting
+	List<WebElement> clValues = r4.findElements(By.xpath("td"));
 	for (int j=0;j<clValues.size();j++)   {
-	String s = clValues.get(j).getText();
+	String s = clValues.get(j).getText();	
 	System.out.println(s);
 	}
 	}
 	}
-	
 	}
 }
