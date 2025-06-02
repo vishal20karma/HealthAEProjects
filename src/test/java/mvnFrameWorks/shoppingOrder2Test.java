@@ -30,7 +30,7 @@ public class shoppingOrder2Test extends invokingBrowser{
  String confirmTxt = cnf.verifyConfirmMessage();
  Assert.assertTrue(confirmTxt.equalsIgnoreCase(confirmationMsg));
  }
-
+ 
  @Test (dependsOnMethods= {"productShoppings"})
  public void verifyOrderHistory()   {
  prdCatalogues pc = lp.webLogin("vishal.vishwakarma20@gmail.com", "@Jas10sum");

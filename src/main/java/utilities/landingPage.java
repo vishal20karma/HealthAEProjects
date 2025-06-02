@@ -24,7 +24,7 @@ private WebElement password;
 private WebElement submit;
 
 @FindBy(css="div[class*='flyInOut']")
-private WebElement errorMsg;
+private WebElement loginMsg;
 
 public prdCatalogues webLogin(String email, String passcode)   {
 userId.sendKeys(email);
@@ -38,9 +38,9 @@ public void goTo()   {
 driver.get("https://rahulshettyacademy.com/client");	
 }
 
-public String errorMsgValidation()   {
-explWaitVis(errorMsg);
-return errorMsg.getText();
+public String loginMsgValidation()   {
+explWaitVis(loginMsg);
+return loginMsg.getText();
 }
 
 }

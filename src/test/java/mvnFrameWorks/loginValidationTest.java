@@ -16,7 +16,7 @@ import utilities.retry;
  @Test (retryAnalyzer=retry.class)
  public void loginTest()   {
  lp.webLogin("vishal.vishwakarma202@gmail.com", "@Jas10sum");
- Assert.assertEquals(errorMsg, lp.errorMsgValidation());
+ Assert.assertEquals(errorMsg, lp.loginMsgValidation());
  }
  
  @Test
