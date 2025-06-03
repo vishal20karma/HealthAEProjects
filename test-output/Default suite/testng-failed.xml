@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="mvnFrameWorks.shoppingOrder3Test">
+      <class name="testNG.test1">
         <methods>
-          <include name="quitDriver"/>
-          <include name="productShoppings" invocation-numbers="0 1"/>
-          <include name="launchBrowser"/>
-          <include name="verifyOrderHistory"/>
+          <include name="OpenEnrollment2"/>
         </methods>
-      </class> <!-- mvnFrameWorks.shoppingOrder3Test -->
+      </class> <!-- testNG.test1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class test1 {
-
+// General examples of Priority
 /* @Test (priority=1)
    public void OpenEnrollment1()   {
    System.out.println("Medical Coverages");	
