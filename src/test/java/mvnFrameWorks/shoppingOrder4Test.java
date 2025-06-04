@@ -41,7 +41,7 @@ public class shoppingOrder4Test extends invokingBrowser{
  public void verifyOrderHistory()   {
  prdCatalogues pc = lp.webLogin("vishal.vishwakarma20@gmail.com", "@Jas10sum");
  orderPg op = pc.goToOrderPage();
- Assert.assertTrue(op.verifyOrdersList("IPHONE 13 PRO"));
+ Assert.assertTrue(op.verifyOrdersList("ZARA COAT 3"));
  }
 
  @DataProvider

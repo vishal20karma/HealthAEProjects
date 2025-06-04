@@ -11,7 +11,7 @@ import utilities.orderPg;
 import utilities.prdCatalogues;
 
 public class shoppingOrder1Test extends invokingBrowser{
- String prdName="IPHONE 13 PRO"; String countryName="India"; String confirmationMsg="Thankyou for the order.";
+ String prdName="ZARA COAT 3"; String countryName="India"; String confirmationMsg="Thankyou for the order.";
  @Test
  public void productShoppings() throws InterruptedException   {
  prdCatalogues pc = lp.webLogin("vishal.vishwakarma20@gmail.com", "@Jas10sum");

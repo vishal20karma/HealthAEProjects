@@ -24,6 +24,9 @@ private WebElement cartPage;
 @FindBy(css="button[routerlink*='myorders']")
 private WebElement orderPage;
 
+@FindBy(xpath="//i[@class='fa fa-sign-out']")
+private WebElement logout;
+
 public cartPg goToCartPage()   {
 cartPage.click();
 cartPg cpg = new cartPg(driver);
@@ -34,6 +37,10 @@ public orderPg goToOrderPage()   {
 orderPage.click();
 orderPg op = new orderPg(driver);
 return op;
+}
+
+public void logout()   {
+logout.click();	
 }
 
 public void explWaitVis(WebElement wbEl1)   {

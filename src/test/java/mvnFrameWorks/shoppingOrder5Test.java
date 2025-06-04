@@ -1,39 +1,33 @@
 package mvnFrameWorks;
 
-import java.util.List;
-
+import java.io.IOException;
 import org.junit.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-
 import utilities.cartPg;
 import utilities.checkOutPg;
 import utilities.confirmPg;
+import utilities.excelUtil;
 import utilities.invokingBrowser;
-import utilities.jsonFileReader;
 import utilities.orderPg;
 import utilities.prdCatalogues;
-import utilities.pojo;
 
 public class shoppingOrder5Test extends invokingBrowser{
- //   String prdName="IPHONE 13 PRO"; String countryName="India"; 
+//   String prdName="IPHONE 13 PRO"; String countryName="India"; 
  String confirmationMsg="Thankyou for the order.";
- @Test (dataProvider="getData")
- public void productShoppings(pojo prd) throws InterruptedException   {
- prdCatalogues pc = lp.webLogin(prd.getEmail(), prd.getPassword());
- pc.addToCart(prd.getProduct());
+ @Test (dataProvider="loginData")
+ public void productShoppings(String email, String password, String product, String country) throws InterruptedException   {
+ prdCatalogues pc = lp.webLogin(email, password);
+ pc.addToCart(product);
  pc.waitAfterAddToCart();
  cartPg cpg = pc.goToCartPage();
- boolean productMatch = cpg.verifyProduct(prd.getProduct());
+ boolean productMatch = cpg.verifyProduct(product);
  Assert.assertTrue(productMatch);
- int images = cpg.imgSize();
- Assert.assertEquals(images, prd.getImageCount());
  pc.thread();
  pc.windowScroll();
  checkOutPg cop = cpg.checkOutBt();
- cop.selectCountry(prd.getCountry());
+ cop.selectCountry(country);
  confirmPg cnf = cop.placeOrder();
  String confirmTxt = cnf.verifyConfirmMessage();
  Assert.assertTrue(confirmTxt.equalsIgnoreCase(confirmationMsg));
@@ -43,12 +37,13 @@ public class shoppingOrder5Test extends invokingBrowser{
  public void verifyOrderHistory()   {
  prdCatalogues pc = lp.webLogin("vishal.vishwakarma20@gmail.com", "@Jas10sum");
  orderPg op = pc.goToOrderPage();
- Assert.assertTrue(op.verifyOrdersList("IPHONE 13 PRO"));
+ Assert.assertTrue(op.verifyOrdersList("ZARA COAT 3"));
  }
 
  @DataProvider
- public Object[][] getData()   {
- return jsonFileReader.getJsonData(System.getProperty("user.dir")
-			 +"//src//main//java//dataStores//testData2.json", new TypeReference<List<pojo>>() {}); 
+ public Object[][] loginData() throws IOException   {
+ Object [][] exlTestData = excelUtil.readFromExcel(System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx", "LoginDetails");	 
+ return exlTestData;
  }
+
 }

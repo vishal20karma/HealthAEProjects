@@ -37,7 +37,7 @@ public class shoppingOrder3Test extends invokingBrowser{
  public void verifyOrderHistory()   {
  prdCatalogues pc = lp.webLogin("vishal.vishwakarma20@gmail.com", "@Jas10sum");
  orderPg op = pc.goToOrderPage();
- Assert.assertTrue(op.verifyOrdersList("IPHONE 13 PRO"));
+ Assert.assertTrue(op.verifyOrdersList("ZARA COAT 3"));
  }
 
  @DataProvider
@@ -45,7 +45,7 @@ public class shoppingOrder3Test extends invokingBrowser{
  HashMap<String, String> hm1 = new HashMap<String, String>();
  hm1.put("email", "vishal.vishwakarma20@gmail.com");
  hm1.put("password", "@Jas10sum");
- hm1.put("prdName", "IPHONE 13 PRO");
+ hm1.put("prdName", "ZARA COAT 3");
  hm1.put("country", "India");
  
  HashMap<String, String> hm2 = new HashMap<String, String>();

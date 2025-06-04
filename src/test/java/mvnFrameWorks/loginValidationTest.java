@@ -11,7 +11,7 @@ import utilities.prdCatalogues;
 import utilities.retry;
 
  public class loginValidationTest extends invokingBrowser{
- String prdName="IPHONE 13 PRO"; String errorMsg="Incorrect email  password.";
+ String prdName="ZARA COAT 3"; String errorMsg="Incorrect email  password.";
  
  @Test (retryAnalyzer=retry.class)
  public void loginTest()   {

@@ -35,7 +35,7 @@ public class shoppingOrder2Test extends invokingBrowser{
  public void verifyOrderHistory()   {
  prdCatalogues pc = lp.webLogin("vishal.vishwakarma20@gmail.com", "@Jas10sum");
  orderPg op = pc.goToOrderPage();
- Assert.assertTrue(op.verifyOrdersList("IPHONE 13 PRO"));
+ Assert.assertTrue(op.verifyOrdersList("ZARA COAT 3"));
  }
 
  @DataProvider
@@ -43,7 +43,7 @@ public class shoppingOrder2Test extends invokingBrowser{
  Object [][] data = new Object[2][4];
  data[0][0]="vishal.vishwakarma20@gmail.com";
  data[0][1]="@Jas10sum";
- data[0][2]="IPHONE 13 PRO";
+ data[0][2]="ZARA COAT 3";
  data[0][3]="India";
  
  data[1][0]="shetty@gmail.com";

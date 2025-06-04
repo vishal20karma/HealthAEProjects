@@ -19,7 +19,7 @@ public class standAloneTest {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-    String prdName="IPHONE 13 PRO";
+    String prdName="ZARA COAT 3";
 	WebDriverManager.firefoxdriver().setup();
 	WebDriver driver = new FirefoxDriver();
 	driver.manage().window().maximize();
