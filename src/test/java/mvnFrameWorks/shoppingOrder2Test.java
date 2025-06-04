@@ -12,7 +12,7 @@ import utilities.orderPg;
 import utilities.prdCatalogues;
 
 public class shoppingOrder2Test extends invokingBrowser{
- //   String prdName="IPHONE 13 PRO"; String countryName="India"; 
+ //   String prdName="ZARA COAT 3"; String countryName="India"; 
  String confirmationMsg="Thankyou for the order.";
  @Test (dataProvider="getData")
  public void productShoppings(String email, String password, String prdName, String country) throws InterruptedException   {
