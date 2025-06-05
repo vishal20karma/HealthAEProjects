@@ -1,13 +1,11 @@
-{	
-"email" : "vishal.vishwakarma20@gmail.com",
+[
+{"email" : "vishal.vishwakarma20@gmail.com",
 "password" : "@Jas10sum",
 "product" : "ZARA COAT 3",
-"country" : "India"
-},	    
+"country" : "India"},	    
 
-{
-"email" : "shetty@gmail.com",
+{"email" : "shetty@gmail.com",
 "password" : "Iamking@000",
 "product" : "ADIDAS ORIGINAL",
-"country" : "Afghanistan"
-}
+"country" : "Afghanistan"}
+]

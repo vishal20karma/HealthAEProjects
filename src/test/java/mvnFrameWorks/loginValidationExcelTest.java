@@ -3,18 +3,14 @@ package mvnFrameWorks;
 import java.io.IOException;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.sun.net.httpserver.Authenticator.Retry;
-
 import utilities.cartPg;
-import utilities.excelUtil;
+import utilities.excelUtility;
 import utilities.invokingBrowser;
 import utilities.orderPg;
 import utilities.prdCatalogues;
-import utilities.retry;
 
  public class loginValidationExcelTest extends invokingBrowser{
  String prdName="ZARA COAT 3"; String loginMsg="Login Successfully";
@@ -42,7 +38,7 @@ import utilities.retry;
  
  @DataProvider
  public Object[][] loginData() throws IOException   {
- Object [][] exlTestData = excelUtil.readFromExcel(System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx", "LoginDetails");	 
+ Object [][] exlTestData = excelUtility.readFromExcel(System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx", "LoginDetails");	 
  return exlTestData;
  }
 

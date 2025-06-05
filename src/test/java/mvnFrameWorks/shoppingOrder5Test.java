@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import utilities.cartPg;
 import utilities.checkOutPg;
 import utilities.confirmPg;
-import utilities.excelUtil;
+import utilities.excelUtility;
 import utilities.invokingBrowser;
 import utilities.orderPg;
 import utilities.prdCatalogues;
@@ -42,7 +42,7 @@ public class shoppingOrder5Test extends invokingBrowser{
 
  @DataProvider
  public Object[][] loginData() throws IOException   {
- Object [][] exlTestData = excelUtil.readFromExcel(System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx", "LoginDetails");	 
+ Object [][] exlTestData = excelUtility.readFromExcel(System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx", "LoginDetails");	 
  return exlTestData;
  }
 

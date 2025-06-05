@@ -2,92 +2,62 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-04T18:57:29 IST" name="Default suite" finished-at="2025-06-04T18:58:06 IST" duration-ms="37495">
+  <suite started-at="2025-06-05T16:44:37 IST" name="Suite" finished-at="2025-06-05T16:45:15 IST" duration-ms="38356">
     <groups>
     </groups>
-    <test started-at="2025-06-04T18:57:29 IST" name="Default test" finished-at="2025-06-04T18:58:06 IST" duration-ms="37495">
-      <class name="mvnFrameWorks.shoppingOrder5Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:57:30 IST" name="launchBrowser" finished-at="2025-06-04T18:57:35 IST" duration-ms="5337" status="PASS">
+    <test started-at="2025-06-05T16:44:37 IST" name="JsonDataRahul" finished-at="2025-06-05T16:45:15 IST" duration-ms="38356">
+      <class name="mvnFrameWorks.shoppingOrder4Test">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:44:37 IST" name="launchBrowser" finished-at="2025-06-05T16:44:43 IST" duration-ms="6129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="productShoppings(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:57:35 IST" name="productShoppings" data-provider="loginData" finished-at="2025-06-04T18:57:44 IST" duration-ms="8951" status="PASS">
+        <test-method signature="productShoppings(java.util.HashMap)[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:44:43 IST" name="productShoppings" data-provider="getData" finished-at="2025-06-05T16:44:52 IST" duration-ms="8783" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[vishal.vishwakarma20@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[@Jas10sum]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[ZARA COAT 3]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[India]]>
+                <![CDATA[{country=India, password=@Jas10sum, product=ZARA COAT 3, email=vishal.vishwakarma20@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productShoppings -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:57:44 IST" name="quitDriver" finished-at="2025-06-04T18:57:45 IST" duration-ms="962" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:44:52 IST" name="quitDriver" finished-at="2025-06-05T16:44:53 IST" duration-ms="1078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:57:45 IST" name="launchBrowser" finished-at="2025-06-04T18:57:49 IST" duration-ms="4429" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:44:53 IST" name="launchBrowser" finished-at="2025-06-05T16:44:58 IST" duration-ms="4918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="productShoppings(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:57:49 IST" name="productShoppings" data-provider="loginData" finished-at="2025-06-04T18:57:58 IST" duration-ms="8909" status="PASS">
+        <test-method signature="productShoppings(java.util.HashMap)[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:44:58 IST" name="productShoppings" data-provider="getData" finished-at="2025-06-05T16:45:07 IST" duration-ms="9155" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[shetty@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Iamking@000]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[ADIDAS ORIGINAL]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Afghanistan]]>
+                <![CDATA[{country=Afghanistan, password=Iamking@000, product=ADIDAS ORIGINAL, email=shetty@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productShoppings -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:57:58 IST" name="quitDriver" finished-at="2025-06-04T18:57:59 IST" duration-ms="976" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:45:07 IST" name="quitDriver" finished-at="2025-06-05T16:45:08 IST" duration-ms="995" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:57:59 IST" name="launchBrowser" finished-at="2025-06-04T18:58:05 IST" duration-ms="5455" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:45:08 IST" name="launchBrowser" finished-at="2025-06-05T16:45:13 IST" duration-ms="4674" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyOrderHistory()[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:58:05 IST" name="verifyOrderHistory" finished-at="2025-06-04T18:58:05 IST" depends-on-methods="mvnFrameWorks.shoppingOrder5Test.productShoppings" duration-ms="641" status="PASS">
+        <test-method signature="verifyOrderHistory()[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:45:13 IST" name="verifyOrderHistory" finished-at="2025-06-05T16:45:14 IST" depends-on-methods="mvnFrameWorks.shoppingOrder4Test.productShoppings" duration-ms="913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyOrderHistory -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:mvnFrameWorks.shoppingOrder5Test@1ce24091]" started-at="2025-06-04T18:58:05 IST" name="quitDriver" finished-at="2025-06-04T18:58:06 IST" duration-ms="958" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:mvnFrameWorks.shoppingOrder4Test@1ce24091]" started-at="2025-06-05T16:45:14 IST" name="quitDriver" finished-at="2025-06-05T16:45:15 IST" duration-ms="1285" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-      </class> <!-- mvnFrameWorks.shoppingOrder5Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- mvnFrameWorks.shoppingOrder4Test -->
+    </test> <!-- JsonDataRahul -->
+  </suite> <!-- Suite -->
 </testng-results>

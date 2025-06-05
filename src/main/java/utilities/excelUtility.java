@@ -6,18 +6,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class excelUtil {
-
-	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
- // String path=System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx";
-	Object [][] exlTestData = excelUtil.readFromExcel(System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx", "LoginDetails");
-	for (int i=0;i<exlTestData.length;i++)   {
-	for (int j=0;j<exlTestData[i].length;j++)   {
-	System.out.println(exlTestData[i][j]);	
-	}
-	}
-	}
+public class excelUtility {
 
 	public static Object[][] readFromExcel(String excelFilePath, String sheetName) throws IOException   {
 	XSSFWorkbook workbook = new XSSFWorkbook(excelFilePath);
@@ -38,4 +27,5 @@ public class excelUtil {
 	workbook.close();
 	return data;
 	}
-}
+}	
+

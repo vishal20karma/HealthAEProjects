@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Regression(failed)">
+  <test thread-count="5" name="JsonDataRahul(failed)">
     <classes>
-      <class name="mvnFrameWorks.loginValidationTest">
+      <class name="mvnFrameWorks.shoppingOrder4Test">
         <methods>
           <include name="quitDriver"/>
-          <include name="loginTest"/>
+          <include name="productShoppings" invocation-numbers="0 1"/>
           <include name="launchBrowser"/>
+          <include name="verifyOrderHistory"/>
         </methods>
-      </class> <!-- mvnFrameWorks.loginValidationTest -->
+      </class> <!-- mvnFrameWorks.shoppingOrder4Test -->
     </classes>
-  </test> <!-- Regression(failed) -->
+  </test> <!-- JsonDataRahul(failed) -->
 </suite> <!-- Failed suite [Suite] -->

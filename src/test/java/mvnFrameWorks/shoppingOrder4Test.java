@@ -23,10 +23,10 @@ public class shoppingOrder4Test extends invokingBrowser{
  @Test (dataProvider="getData")
  public void productShoppings(HashMap<String, String>map) throws InterruptedException   {
  prdCatalogues pc = lp.webLogin(map.get("email"), map.get("password"));
- pc.addToCart(map.get("prdName"));
+ pc.addToCart(map.get("product"));
  pc.waitAfterAddToCart();
  cartPg cpg = pc.goToCartPage();
- boolean productMatch = cpg.verifyProduct(map.get("prdName"));
+ boolean productMatch = cpg.verifyProduct(map.get("product"));
  Assert.assertTrue(productMatch);
  pc.thread();
  pc.windowScroll();
