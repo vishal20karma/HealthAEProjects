@@ -32,7 +32,7 @@ public class dates {
 	driver.findElement(By.id("ctl00_mainContent_view_date1")).click();
 	driver.findElement(By.cssSelector(".ui-state-default.ui-state-active")).click();
 	Thread.sleep(2000);
-	driver.quit();	
+	driver.quit();
 	
 	}
 

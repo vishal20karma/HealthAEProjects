@@ -34,6 +34,7 @@ public class browserInvoke {
 	System.out.println(driver1.getCurrentUrl());
 	Thread.sleep(2000);
 	driver1.quit();
+	
 	System.out.println("*********************************");
 		
 /*	WebDriverManager.firefoxdriver().setup();
@@ -59,9 +60,9 @@ public class browserInvoke {
 		
 /*	WebDriverManager.edgedriver().setup();
 	WebDriver driver3 = new EdgeDriver();
-	driver3.get("https://www.facebook.com/");
 	driver3.manage().window().maximize();
 	driver3.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver3.get("https://www.facebook.com/");
 	System.out.println(driver3.getTitle());
 	System.out.println(driver3.getCurrentUrl());
 	Thread.sleep(2000);

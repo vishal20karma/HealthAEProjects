@@ -48,7 +48,7 @@ public class shoppingOrder4Test extends invokingBrowser{
  public Object[][] getData() throws IOException   {
  List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir")
 		 +"//src//main//java//dataStores//testData.json");
- return new Object[][] {{data.get(0)},{data.get(1)}};
+ return new Object[][] {{data.get(0)},{data.get(1)}};   //If data set increased in the json file, then keep increasing {data.get(2)} and so on
  }
  
  

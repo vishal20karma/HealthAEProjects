@@ -37,13 +37,13 @@ public class enabledDisabled {
 	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 	System.out.println(driver.findElement(By.id("Div1")).getDomAttribute("style"));
 	driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+	System.out.println(driver.findElement(By.id("Div1")).getDomAttribute("style"));
 	if (driver.findElement(By.id("Div1")).getDomAttribute("style").contains("1"))   {
 	System.out.println("UI is enabled");	
 	}
 	else {
-	System.out.println("UI is disabled");
+	System.out.println("UI is disabled");	
 	}
-	System.out.println(driver.findElement(By.id("Div1")).getDomAttribute("style"));
 	Thread.sleep(2000);
 	driver.quit();
 	

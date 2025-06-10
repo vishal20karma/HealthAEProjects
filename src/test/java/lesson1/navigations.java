@@ -11,7 +11,7 @@ public class navigations {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-
+//  Navigation types
 /*	WebDriverManager.edgedriver().setup();
 	WebDriver driver = new EdgeDriver();
 	driver.manage().window().maximize();

@@ -40,7 +40,7 @@ public class staticDropDowns {
 	driver.findElement(By.xpath("//input[@id='btnclosepaxoption']")).click();
 	String st = driver.findElement(By.cssSelector("div#divpaxinfo")).getText();
 	System.out.println(st);
-	driver.close();   */
+	driver.driver.quit();   */
 		
 //  For Practice
 	WebDriverManager.firefoxdriver().setup();
@@ -60,6 +60,7 @@ public class staticDropDowns {
 	System.out.println(s.getFirstSelectedOption().getText());
 	Thread.sleep(1000);
 	driver.findElement(By.cssSelector("div#divpaxinfo")).click();
+	Thread.sleep(1000);
 	int i=0;
 	while (i<4)   {
 	driver.findElement(By.xpath("//span[@id='hrefIncAdt']")).click();

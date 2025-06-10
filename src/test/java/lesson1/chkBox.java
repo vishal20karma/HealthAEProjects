@@ -36,7 +36,7 @@ public class chkBox {
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-	List<WebElement> bxs = driver.findElements(By.cssSelector("input[id*='ctl00_mainContent_chk_']"));
+	List<WebElement> bxs = driver.findElements(By.cssSelector("input[id*='ctl00_mainContent_chk_']"));	
 	Assert.assertEquals(6, bxs.size());
 	WebElement chkBx = driver.findElement(By.cssSelector("input[id*='IndArm']"));
 	System.out.println(chkBx.isSelected());
@@ -44,7 +44,7 @@ public class chkBox {
 	System.out.println(chkBx.isSelected());
 	Thread.sleep(2000);
 	driver.quit();
-		
+	
 	}
 
 }

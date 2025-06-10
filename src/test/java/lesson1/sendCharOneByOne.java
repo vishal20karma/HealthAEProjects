@@ -20,9 +20,9 @@ public class sendCharOneByOne {
 	WebElement box = driver.findElement(By.xpath("//input[@class='search-keyword']"));
 	String str = "Cucumber";
 	for (int i=0;i<str.length();i++)   {
-	char chr = str.charAt(i);	
-	String c = String.valueOf(chr);
-	box.sendKeys(c);
+	char c = str.charAt(i);	
+	String s = String.valueOf(c);
+	box.sendKeys(s);
 	Thread.sleep(500);
 	}
 	driver.quit();   */		
@@ -35,9 +35,9 @@ public class sendCharOneByOne {
 	WebElement box = driver.findElement(By.xpath("//input[@class='search-keyword']"));
 	String str = "Cucumber";
 	for (int i=0;i<str.length();i++)   {
-	char chr = str.charAt(i);	
-	String c = String.valueOf(chr);
-	box.sendKeys(c);
+	char c = str.charAt(i);	
+	String s = String.valueOf(c);
+	box.sendKeys(s);
 	Thread.sleep(500);
 	}
 	driver.quit();

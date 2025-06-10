@@ -24,13 +24,13 @@ public class locators1 {
 	String s = driver.findElement(By.partialLinkText("privacy")).getText();   //By Partial link text
 	System.out.println(s);
 	driver.findElement(By.className("signInBtn")).click();   //ClassName (if element has class attribute then its values can be used for 'classname', also it can only have one value)
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[text()='Log Out']")).click();   //Xpath by Text method
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	driver.findElement(By.linkText("Forgot your password?")).click();   //By link text
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	driver.findElement(By.cssSelector("button[class='go-to-login-btn']")).click();   //By Css
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	String t = driver.findElement(By.tagName("h1")).getText();   //By tagname
 	System.out.println(t);
 	driver.quit();   */
@@ -43,20 +43,20 @@ public class locators1 {
 	driver.get("https://rahulshettyacademy.com/locatorspractice/");
 	driver.findElement(By.id("inputUsername")).sendKeys("Rahul");
 	driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
-	driver.findElement(By.xpath("//input[@name='chkboxOne']")).click();
+	driver.findElement(By.xpath("//input[@id='chkboxOne']")).click();
 	String s = driver.findElement(By.partialLinkText("privacy")).getText();
 	System.out.println(s);
 	driver.findElement(By.className("signInBtn")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//button[@class='logout-btn']")).click();
-	Thread.sleep(2000);
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("//button[text()='Log Out']")).click();
+	Thread.sleep(1000);
 	driver.findElement(By.linkText("Forgot your password?")).click();
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	driver.findElement(By.cssSelector("button[class='go-to-login-btn']")).click();
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	String t = driver.findElement(By.tagName("h1")).getText();
 	System.out.println(t);
-	driver.quit();	
+	driver.quit();
 	
 	}
 

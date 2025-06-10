@@ -73,7 +73,7 @@ public class locators3 {
 	Thread.sleep(2000);
 	String sms1 = driver.findElement(By.xpath("//p[contains(text(),'You are')]")).getText();
 	Assert.assertEquals(sms1, "You are successfully logged in.");
-	String sms2 = driver.findElement(By.xpath("//div[@class='login-container']/h2")).getText();
+	String sms2 = driver.findElement(By.xpath("//h2[normalize-space()='Hello Rahul,']")).getText();
 	Assert.assertEquals(sms2, "Hello Rahul,");
 	driver.findElement(By.cssSelector(".logout-btn")).click();
 	Thread.sleep(2000);
