@@ -54,7 +54,7 @@ public class softHardAssertions {
 	conn.connect();
 	int rspCd = conn.getResponseCode();
 	System.out.println(urlLinks+"--->"+rspCd);
-	s.assertTrue(rspCd<400, "The Link with the Text: "+urlLinks+": is a broken with code: "+rspCd);
+	s.assertTrue(rspCd<400, "The Link: "+urlLinks+": is broken with code: "+rspCd);
 	}
 	driver.quit();
 	s.assertAll();
