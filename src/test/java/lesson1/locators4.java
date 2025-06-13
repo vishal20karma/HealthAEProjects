@@ -50,10 +50,17 @@ public class locators4 {
 //  Double Xpath(Main to child) by using contains, these are also called descendants xpaths
 	WebElement etName = driver.findElement(By.xpath("//fieldset[@class='pull-right'] //input[contains(@placeholder,'Enter')]"));
 	etName.sendKeys("Vishal");
+	Thread.sleep(1000);
 	
 //  Double Xpath(Main to child) by using contains - Second Example, these are also called descendants xpaths
 	WebElement brkLink = driver.findElement(By.xpath("//div[@id='gf-BIG'] //a[contains(text(),'Broken')]"));
 	System.out.println(brkLink.getText());
+	
+//  Double Xpath(Main to child) by using 'and'
+	WebElement etName2 = driver.findElement(By.xpath("(//fieldset)[position()=7] //input[@name='enter-name' and @class='inputs']"));
+	etName2.clear();
+	etName2.sendKeys("Vishwakarma");
+	Thread.sleep(1000);
 	
 //  How to find the last element dynamically
 	WebElement yTube = driver.findElement(By.xpath("(//div[@id='gf-BIG'] //a)[last()]"));
@@ -65,7 +72,7 @@ public class locators4 {
 	
 //  How to find the locator with position	
 	WebElement soapUI = driver.findElement(By.xpath("(//div[@id='gf-BIG'] //a)[position()=3]"));
-	System.out.println(soapUI.getText());
+	System.out.println(soapUI.getText());	
 	
 	Thread.sleep(2000);
 	driver.quit();
