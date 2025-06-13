@@ -3,6 +3,7 @@ package lesson5;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.Row;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -23,25 +24,22 @@ public class rowColTableValues2Prac {
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 300)");
 	getRowColData(driver);
-	driver.quit();
-	
+    
 	}
-
+   
 	public static void getRowColData(WebDriver driver)   {
+	List<WebElement> cols = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/th"));	
 	List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr"));
-	List<WebElement> cols = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/th"));
-	int k=1;
-	for (WebElement s:cols)   {
-	System.out.println("Header"+k+"-"+s.getText());	
-	k++;
+	for (int i=0;i<cols.size();i++)   {
+	System.out.println("Header"+(i+1)+":"+cols.get(i).getText());	
 	}
-	for (int i=1;i<rows.size();i++)   {
-	for (int j=1;j<=cols.size();j++)   {
-	String dValue = driver.findElement(By.xpath("//table[@id='customers']/tbody/tr["+(i+1)+"]/td["+j+"]")).getText();	
-	System.out.println("Row:"+i+" : "+"Col"+j);
+	for (int j=1;j<rows.size();j++)   {
+	for (int k=1;k<=cols.size();k++)   {
+	String dValue = driver.findElement(By.xpath("//table[@id='customers']/tbody/tr["+(j+1)+"]/td["+k+"]")).getText();
+	System.out.println("Row:"+j+" : "+"Col:"+k);
 	System.out.println(dValue);
 	}
 	}
-	
 	}
+
 }

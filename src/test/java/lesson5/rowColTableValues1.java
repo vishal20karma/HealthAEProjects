@@ -31,9 +31,8 @@ public class rowColTableValues1 {
 	public static void getRowsColData(WebDriver driver)   {
 	List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/td"));
 	for (int i=0;i<rows.size();i++)   {
-	String data = rows.get(i).getText();	
+	String data = rows.get(i).getText();
 	System.out.println(data);
+	} 
 	}
-	}
-	
 }

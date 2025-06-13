@@ -44,11 +44,11 @@ public class addAllItems {
 	addItems.get(i).click();	
 	}
 	Thread.sleep(2000);
-	String totItems = driver.findElement(By.xpath("(//tbody/tr/td[3]/strong)[1]")).getText();
-	Assert.assertEquals(30, Integer.parseInt(totItems));
+	String totalItems = driver.findElement(By.xpath("//tbody/tr/td[3]/strong[1]")).getText();
+	Assert.assertEquals(30, Integer.parseInt(totalItems));
 	Thread.sleep(2000);
 	driver.quit();
-	
+
 	}
 
 }

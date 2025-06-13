@@ -1,6 +1,7 @@
 package lesson3;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,13 +26,13 @@ public class addItemsGen2Prac {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 	WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(10));
-	String [] prdItems = {"Cucumber", "Tomato", "Apple", "Banana", "Nuts Mixture"};
-	List<String> neededList = Arrays.asList(prdItems);
-	getVeggies(driver, neededList);	
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("//img[@alt='Cart']")).click();
-	driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
-	Thread.sleep(1000);
+    String [] prdItems = {"Cucumber", "Tomato", "Apple", "Banana", "Nuts Mixture"};
+    List<String> neededList = Arrays.asList(prdItems);
+    getVeggies(driver, neededList);
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("//img[@alt='Cart']")).click();
+    driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
+    Thread.sleep(1000);
 	driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
 	driver.findElement(By.cssSelector("button.promoBtn")).click();
 	WebElement cdTxt = driver.findElement(By.className("promoInfo"));
@@ -47,16 +48,15 @@ public class addItemsGen2Prac {
     int j=0;
     for (int i=0;i<products.size();i++)   {
     String prdNames = products.get(i).getText();	
-    String [] spltNames = prdNames.split("-");
-    String frmNames = spltNames[0].trim();
+    String [] spltName = prdNames.split("-");
+    String frmNames = spltName[0].trim();
     if (neededList.contains(frmNames))   {
     driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
-    j++;
     if (j==neededList.size())   {
-    break;
+    break;	
     }
     }
     }
-    
+    	
     }
 }

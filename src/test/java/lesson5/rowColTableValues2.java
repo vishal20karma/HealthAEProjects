@@ -32,7 +32,7 @@ public class rowColTableValues2 {
 	List<WebElement> cols = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/th"));	
 	int k=1;
 	for (WebElement s:cols)   {
-	System.out.println("Header"+k+s.getText());	
+	System.out.println("Header"+k+":"+s.getText());	
 	k++;
 	}
 	for (int i=1;i<rows.size();i++)   {

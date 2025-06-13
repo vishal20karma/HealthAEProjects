@@ -48,10 +48,9 @@ public class addItemsFromList1 {
 	List<String> neededList = Arrays.asList(prdItems);
 	List<WebElement> products = driver.findElements(By.xpath("//h4[@class='product-name']"));
 	for (int i=0;i<products.size();i++)   {
-	String prdNames = products.get(i).getText();
+	String prdNames = products.get(i).getText();	
 	if (neededList.contains(prdNames))   {
-	System.out.println(prdNames);
-	driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
+	driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();	
 	}
 	}
 	Thread.sleep(2000);

@@ -14,51 +14,47 @@ public class dropDownGen1 {
 	static WebDriver driver;
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-
+//  This is for only one drop down automation, WebElement variable directly passed into all the methods
 	WebDriverManager.chromedriver().setup();
-	driver = new ChromeDriver();
+	WebDriver driver = new ChromeDriver();
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-	By currency = By.id("ctl00_mainContent_DropDownListCurrency");
-	dropDown(currency, "visibleText", "AED");
-	Thread.sleep(1000);
-	dropDown(currency, "index", "3");
-	Thread.sleep(1000);
-	dropDown(currency, "value", "INR");
-	Thread.sleep(1000);
-	driver.quit();
-	
+    WebElement currency = driver.findElement(By.xpath("//select[@id='ctl00_mainContent_DropDownListCurrency']"));
+    dropDown(currency, "visibleText", "AED");
+    Thread.sleep(1000);
+    dropDown(currency, "index", "3");
+    Thread.sleep(1000);
+    dropDown(currency, "value", "INR");
+    Thread.sleep(1000);
+    driver.quit();
+    
 	}
 	
-	public static void dropDown(By locator, String type, String value)   {
+	public static void dropDown(WebElement currency, String type, String data)   {
 	switch (type)   {
-	case "visibleText" : ByVisibleText(locator, value);
+	case "visibleText" : byVisibleText(currency, data);
 	break;
-	case "index" : ByIndex(locator, Integer.parseInt(value));
+	case "index" : byIndex(currency, Integer.parseInt(data));
 	break;
-	case "value" : ByValue(locator, value);
+	case "value" : byValue(currency, data);
 	break;
-	default: System.out.println("Enter the correct 'Type'");
+	default : System.out.println("Enter the correct 'type'");
 	}
-	}
-
-	public static WebElement getWebElement(By locator)   {
-	return driver.findElement(locator);
-	}
-
-    public static void ByVisibleText(By locator, String text)   {
-    Select s = new Select(getWebElement(locator));	
-    s.selectByVisibleText(text);
     }
 
-    public static void ByIndex(By locator, int index)   {
-    Select s = new Select(getWebElement(locator));
-    s.selectByIndex(index);
-    }
+	public static void byVisibleText(WebElement currency, String visibleText)   {
+	Select s = new Select(currency);	
+	s.selectByVisibleText(visibleText);
+	}
+		
+	public static void byIndex(WebElement currency, int index)   {
+	Select s = new Select(currency);	
+	s.selectByIndex(index);
+	}
 
-    public static void ByValue(By locator, String value)   {
-    Select s = new Select(getWebElement(locator));	
-    s.selectByValue(value);
-    }
+	public static void byValue(WebElement currency, String value)   {
+	Select s = new Select(currency);
+	s.selectByValue(value);
+	}
 }

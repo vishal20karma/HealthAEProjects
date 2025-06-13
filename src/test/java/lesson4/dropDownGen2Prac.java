@@ -10,55 +10,54 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class dropDownGen2Prac extends drpDnBs{
+public class dropDownGen2Prac {
 	static WebDriver driver;
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
 	WebDriverManager.chromedriver().setup();
-	driver = new ChromeDriver();
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-	By currency = By.id("ctl00_mainContent_DropDownListCurrency");
-	dropDown(currency, vt(), "AED");   //drpDnBs.vt() can also be used, but using it directly
+	WebDriver driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+	WebElement currency = driver.findElement(By.xpath("//select[@id='ctl00_mainContent_DropDownListCurrency']"));
+//	WebElement country = driver.findElement(By.xpath("//select[@id='ctl00_mainContent_DropDownListCurrency']"));
+//  Upper 'country' WebElement has been used just for multiple drop down reference. If multiple drop downs then same WebElement can be called they way currency has been called
+	selectDropDown(currency, dropDnType.VISIBLE_TEXT, "AED");
 	Thread.sleep(1000);
-	dropDown(currency, ind(), "3");
+	selectDropDown(currency, dropDnType.INDEX, "3");
 	Thread.sleep(1000);
-	dropDown(currency, vl(), "INR");
+	selectDropDown(currency, dropDnType.VALUE, "INR");
 	Thread.sleep(1000);
 	driver.quit();
-	
+		
 	}
-	
-	public static void dropDown(By locator, String type, String value)   {
+		
+	public static void selectDropDown(WebElement dropDown, dropDnType type, String data)   {
 	switch (type)   {
-	case "visibleText" : ByVisibleText(locator, value);
+	case VISIBLE_TEXT : byVisibleText(dropDown, data);
 	break;
-	case "index" : ByIndex(locator, Integer.parseInt(value));
+	case INDEX : byIndex(dropDown, Integer.parseInt(data));
 	break;
-	case "value" : ByValue(locator, value);
+	case VALUE : byValue(dropDown, data);
 	break;
-	default: System.out.println("Enter the correct 'Type'");
+	default : System.out.println("Enter the correct 'type'");
 	}
 	}
 
-	public static WebElement getWebElement(By locator)   {
-	return driver.findElement(locator);
+	public static void byVisibleText(WebElement dropDown, String visibleText)   {
+	Select s = new Select(dropDown);
+	s.selectByVisibleText(visibleText);
 	}
 
-    public static void ByVisibleText(By locator, String text)   {
-    Select s = new Select(getWebElement(locator));	
-    s.selectByVisibleText(text);
-    }
+	public static void byIndex(WebElement dropDown, int index)   {
+	Select s = new Select(dropDown);
+	s.selectByIndex(index);
+	}
+	    
+	public static void byValue(WebElement dropDown, String value)   {
+	Select s = new Select(dropDown);	
+	s.selectByValue(value);
+	}
 
-    public static void ByIndex(By locator, int index)   {
-    Select s = new Select(getWebElement(locator));
-    s.selectByIndex(index);
-    }
-
-    public static void ByValue(By locator, String value)   {
-    Select s = new Select(getWebElement(locator));	
-    s.selectByValue(value);
-    }
 }
