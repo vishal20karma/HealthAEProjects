@@ -22,7 +22,7 @@ public class screenshot {
 	driver.get("https://www.amazon.in/");
 	Thread.sleep(1000);
 	File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(src, new File("E:\\Screenshots\\1.png"));
+	FileUtils.copyFile(src, new File("E:\\Screenshots\\2.png"));
 	driver.quit();   */
 		
 //  For Practice
@@ -32,7 +32,7 @@ public class screenshot {
 	driver.get("https://www.amazon.in/");
 	Thread.sleep(1000);
 	File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(src, new File ("E:\\Screenshots\\2.png"));
+	FileUtils.copyFile(src, new File("E:\\Screenshots\\2.png"));
 	driver.quit();
 	
 	}

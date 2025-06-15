@@ -19,7 +19,7 @@ public class shadowRoot {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://books-pwakit.appspot.com/");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
-	WebElement srchBx = (WebElement) js.executeScript("return document.querySelector('book-app').shadowRoot.querySelector('app-header > app-toolbar.toolbar-bottom > book-input-decorator > input')");
+	WebElement srchBx = (WebElement) js.executeScript("return document.querySelector('book-app').shadowRoot.querySelector('app-header>app-toolbar.toolbar-bottom>book-input-decorator>input')");
 //  String sk = "arguments[0].setAttribute('value','Harry Potter')";
 //  js.executeScript(sk, srchBx);
 	srchBx.sendKeys("Harry Potter");   //This works, but always show upper commented codes during interview

@@ -16,8 +16,8 @@ public class popUps {
 //  How to handle or disable pops blocking	
 /*	WebDriverManager.chromedriver().setup();
 	ChromeOptions c = new ChromeOptions();
-	c.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));   //Array.asList() is mandate here, else code will not run
-	WebDriver driver = new ChromeDriver(c);
+	c.addArguments("--disable-popup-blocking");
+	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.get("https://www.spicejet.com/");
 	Thread.sleep(1000);
@@ -26,7 +26,7 @@ public class popUps {
 //  For Practice
 	WebDriverManager.chromedriver().setup();
 	ChromeOptions c = new ChromeOptions();
-	c.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
+	c.addArguments("--disable-popup-blocking");
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.get("https://www.spicejet.com/");
