@@ -17,9 +17,8 @@ public class pagination3Prac {
 		
 	WebDriverManager.firefoxdriver().setup();
 	WebDriver driver = new FirefoxDriver();
-	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");	
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
     driver.findElement(By.xpath("//thead/tr/th[1]")).click();
     List<String> price;
     do {
@@ -31,16 +30,17 @@ public class pagination3Prac {
     }
     } while (price.size()<1);
 	driver.quit();
-	} 
 	
-    public static String getVeggie(WebElement s)   {
-	String veggie = s.findElement(By.xpath("td[1]")).getText();	
+	}
+
+	public static String getVeggie(WebElement orgList)   {
+	String veggie = orgList.findElement(By.xpath("td[1]")).getText();
 	return veggie;
 	}
 
-    public static String getPrice(WebElement s)   {
-    String price = s.findElement(By.xpath("td[1]/following-sibling::td[1]")).getText();	
-    return price;
-    }
+	public static String getPrice(WebElement orgList)   {
+	String price = orgList.findElement(By.xpath("td[1]/following-sibling::td[1]")).getText();	
+	return price;
+	}
 
 }

@@ -39,9 +39,9 @@ public class svgElements3D {
 	driver.get("https://www.petercollingridge.co.uk/blog/3d-svg/3d-animation-svg/");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 100)");
-	String xpath = "//*[local-name()='svg'] //*[name()='g' and @id='triangles'] //*[name()='path' and contains(@id, 'triangle')]";
 	while (true)   {
-	List<WebElement> svgElements = driver.findElements(By.xpath(xpath));	
+	List<WebElement> svgElements = driver.findElements(By.xpath("//*[local-name()='svg'] "
+			+ "//*[name()='g' and @id='triangles'] //*[name()='path' and contains(@id, 'triangle')]"));
 	for (WebElement e:svgElements)   {
 	String value = e.getDomAttribute("d");	
 	System.out.println(value);
