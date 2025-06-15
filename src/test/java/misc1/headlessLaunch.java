@@ -23,8 +23,8 @@ public class headlessLaunch {
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/");
-	WebElement wb = driver.findElement(By.xpath("(//div[@class='login-btn'])[2]"));
-	System.out.println(wb.getText());   */
+	WebElement login = driver.findElement(By.xpath("(//div[@class='login-btn'])[2]"));
+	System.out.println(login.getText());   */
 		
 //  For Practice
 	WebDriverManager.chromedriver().setup();
@@ -34,8 +34,8 @@ public class headlessLaunch {
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/");
-	WebElement wb = driver.findElement(By.xpath("(//div[@class='login-btn'])[2]"));
-	System.out.println(wb.getText());
+	WebElement login = driver.findElement(By.xpath("(//div[@class='login-btn'])[2]"));
+	System.out.println(login.getText());
 	
 	}
 

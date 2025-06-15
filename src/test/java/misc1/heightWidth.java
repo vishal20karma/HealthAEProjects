@@ -12,20 +12,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class heightWidth {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
 /*	WebDriverManager.chromedriver().setup();
-	WebDriver driver = new ChromeDriver();	
+	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 	WebElement wb = driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT"));
-	int height = wb.getRect().getHeight();
 	int width = wb.getRect().getWidth();
-	Dimension d = wb.getRect().getDimension();   //This gets width and height both
-	System.out.println("Height-"+height+" : "+"Width-"+width);
-	System.out.println(d);   */
+	int height = wb.getRect().getHeight();
+	System.out.println("Width- "+width+" : "+"Height- "+height);
+	Dimension d = wb.getRect().getDimension();
+	System.out.println(d);
+	Thread.sleep(1000);
+	driver.quit();   */
 		
 //  For Practice
 	WebDriverManager.chromedriver().setup();
@@ -34,11 +36,12 @@ public class heightWidth {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 	WebElement wb = driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT"));
-	int height = wb.getRect().getHeight();
 	int width = wb.getRect().getWidth();
+	int height = wb.getRect().getHeight();
+	System.out.println("Width- "+width+" : "+"Height- "+height);
 	Dimension d = wb.getRect().getDimension();
-	System.out.println("Height: "+height+" - "+"Width: "+width);
 	System.out.println(d);
+	Thread.sleep(1000);
 	driver.quit();
 	
 	}

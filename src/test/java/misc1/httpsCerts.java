@@ -1,5 +1,7 @@
 package misc1;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -29,12 +31,13 @@ public class httpsCerts {
 	WebDriverManager.chromedriver().setup();
 	ChromeOptions c = new ChromeOptions();
 	c.setAcceptInsecureCerts(true);
-	WebDriver driver = new ChromeDriver(c);
-	driver.manage().window().maximize();
-	driver.get("https://expired.badssl.com/");
-	Thread.sleep(1000);
-	driver.quit();
-
+	WebDriver driver1 = new ChromeDriver(c);
+    driver1.manage().window().maximize();
+    driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    driver1.get("https://expired.badssl.com/");
+    Thread.sleep(1000);
+    driver1.quit();
+	
 	System.out.println("*****************************");
 	
 /*	WebDriverManager.firefoxdriver().setup();

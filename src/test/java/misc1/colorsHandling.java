@@ -55,10 +55,11 @@ public class colorsHandling {
 	driver.get("https://www.yatra.com/");
 	WebElement wbColor = driver.findElement(By.xpath("//h4[text()='One Way']"));
 	String ftColor = wbColor.getCssValue("color");
+	System.out.println("Font color: "+ftColor);
 	String ftColorHx = Color.fromString(ftColor).asHex();
 	System.out.println("Font Hex Color Value: "+ftColorHx);
 	Assert.assertEquals("#d60f0f", ftColorHx);
-		
+	
 	System.out.println("***********************************");
 		
 //  Border color identification

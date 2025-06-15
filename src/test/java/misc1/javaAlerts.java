@@ -43,7 +43,7 @@ public class javaAlerts {
 	driver.findElement(By.id("alertbtn")).click();
 	Thread.sleep(1000);
 	driver.switchTo().alert().accept();
-//	driver.switchTo().alert().dismiss();
+//  driver.switchTo().alert().dismiss();
 	driver.findElement(By.id("name")).sendKeys("Vishal");
 	driver.findElement(By.id("confirmbtn")).click();
 	Thread.sleep(1000);
