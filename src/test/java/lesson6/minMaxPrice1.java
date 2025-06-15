@@ -16,7 +16,7 @@ public class minMaxPrice1 {
 		// TODO Auto-generated method stub
 
 //	How to get maximum and minimum prices on eCommerce web portal by using Streams, also how to use Normalize Space Xpath	
-/*		WebDriverManager.chromedriver().setup();
+/*	WebDriverManager.chromedriver().setup();
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -40,11 +40,12 @@ public class minMaxPrice1 {
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://www.saucedemo.com/v1/inventory.html");
-	List<WebElement> prices = driver.findElements(By.className("inventory_item_price"));
-	double maxPrice = prices.stream().mapToDouble(d->Double.parseDouble(d.getText().replace("$", "")
+	List<WebElement> priceList = driver.findElements(By.className("inventory_item_price"));
+	System.out.println("Total items: "+priceList.size());
+	double maxPrice = priceList.stream().mapToDouble(d->Double.parseDouble(d.getText().replace("$", "")
 			.trim())).max().getAsDouble();
 	System.out.println(maxPrice);
-	double minPrice = prices.stream().mapToDouble(d->Double.parseDouble(d.getText().replace("$", "")
+	double minPrice = priceList.stream().mapToDouble(d->Double.parseDouble(d.getText().replace("$", "")
 			.trim())).min().getAsDouble();
 	System.out.println(minPrice);
 	driver.findElement(By.xpath("//div[normalize-space()='$"+maxPrice+"']/following-sibling::button")).click();

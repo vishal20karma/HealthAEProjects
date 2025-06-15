@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -18,41 +19,44 @@ public class graphs4 {
 		// TODO Auto-generated method stub
 
 //  How to handle pie charts	
-/*	WebDriverManager.edgedriver().setup();
-	WebDriver driver = new EdgeDriver();
+/*	WebDriverManager.firefoxdriver().setup();
+	WebDriver driver = new FirefoxDriver();
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://emicalculator.net/");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 500)");
-	String pieChart = "(//*[name()='svg'])[1]//*[local-name()='g' and @data-z-index='0.1']//*[local-name()='path']";
-	String tooTips = "(//*[name()='svg'])[1]//*[local-name()='g'][4]//*[local-name()='text']";
+	String pieChart = "(//*[local-name()='svg'] //*[name()='g' and @class='highcharts-series-group'])[1] //*[name()='path']";
+	String toolTips = "(//*[local-name()='svg'])[1] //*[name()='g' and contains (@class, 'highcharts-label highcharts-tooltip')] //*[name()='text']";
 	List<WebElement> pieDivisions = driver.findElements(By.xpath(pieChart));
 	Actions a = new Actions(driver);
 	for (WebElement e:pieDivisions)   {
 	a.moveToElement(e).build().perform();
-	String toolTipTxt = driver.findElement(By.xpath(tooTips)).getText();
+	Thread.sleep(500);
+	String toolTipTxt = driver.findElement(By.xpath(toolTips)).getText();
 	System.out.println(toolTipTxt);
 	Thread.sleep(1000);
 	}
 	driver.quit();   */
 		
 //  For Practice
-	WebDriverManager.edgedriver().setup();
-	WebDriver driver = new EdgeDriver();
+	WebDriverManager.firefoxdriver().setup();
+	WebDriver driver = new FirefoxDriver();
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.get("https://emicalculator.net/");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0, 500)");
-	String pieChart = "(//*[local-name()='svg'])[1]//*[name()='g' and @data-z-index='0.1']//*[name()='path']";
-	String toolTip = "(//*[local-name()='svg'])[1]//*[name()='g'][4]//*[name()='text']";
+	String pieChart = "(//*[local-name()='svg'] //*[name()='g' and @class='highcharts-series-group'])[1] //*[name()='path']";
+	String toolTips = "(//*[local-name()='svg'])[1] //*[name()='g' and contains (@class, 'highcharts-label highcharts-tooltip')] //*[name()='text']";
 	List<WebElement> pieDivisions = driver.findElements(By.xpath(pieChart));
 	Actions a = new Actions(driver);
 	for (WebElement e:pieDivisions)   {
 	a.moveToElement(e).build().perform();
-	String toolTipTxt = driver.findElement(By.xpath(toolTip)).getText();
+	Thread.sleep(500);
+	String toolTipTxt = driver.findElement(By.xpath(toolTips)).getText();
 	System.out.println(toolTipTxt);
+	Thread.sleep(1000);
 	}
 	driver.quit();
 	
