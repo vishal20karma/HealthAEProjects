@@ -16,7 +16,7 @@ import utilities.jsonUtility;
 import utilities.orderPg;
 import utilities.prdCatalogues;
 
-public class shoppingOrder4Test extends invokingBrowser{
+public class shoppingOrder4TestPrac extends invokingBrowser{
  //   String prdName="ZARA COAT 3"; String countryName="India"; 
  String confirmationMsg="Thankyou for the order.";
  @Test (dataProvider="getData")
@@ -48,6 +48,7 @@ public class shoppingOrder4Test extends invokingBrowser{
  Object[][] data = jsonUtility.getJsonData(System.getProperty("user.dir")
 		 +"//src//main//java//dataStores//testData.json");
  return data;
+
  }
  
 }

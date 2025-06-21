@@ -73,16 +73,4 @@ FileUtils.copyFile(src, file);
 return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
 }
 
-//StandarCharsets encoding used because 'readFileToString' has been depreciated 
-//Json to String - Jackson Databind dependencies jars
-public List<HashMap<String, String>> getJsonData(String filepath) throws IOException   {
-String jsonData = FileUtils.readFileToString(new File(filepath),StandardCharsets.UTF_8);
-ObjectMapper mapper = new ObjectMapper();
-List<HashMap<String, String>> data = 
-    mapper.readValue(jsonData, new TypeReference<List<HashMap<String, String>>>(){});
-return data;
-}
-
-
-
 }
