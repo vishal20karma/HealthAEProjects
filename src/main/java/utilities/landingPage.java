@@ -1,5 +1,9 @@
 package utilities;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +16,9 @@ public landingPage(WebDriver driver)   {
 super(driver);
 this.driver=driver;
 PageFactory.initElements(driver, this);
-}
+}   
+
+// For Practice
 
 @FindBy(id="userEmail")
 private WebElement userId;
@@ -33,9 +39,16 @@ submit.click();
 prdCatalogues pc = new prdCatalogues(driver);
 return pc;
 }
-	
+
+/*
 public void goTo()   {
 driver.get("https://rahulshettyacademy.com/client");	
+}   */
+
+// For Practice
+public void goTo() throws IOException   {
+Properties prop = globalData.file();
+driver.get(prop.getProperty("url"));
 }
 
 public String loginMsgValidation()   {

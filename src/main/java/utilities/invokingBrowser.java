@@ -25,13 +25,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class invokingBrowser {
+/*
 public WebDriver driver;
 public landingPage lp;
-
 public WebDriver browserKickOff() throws IOException   {
-Properties prop = new Properties();	
-FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//main//java//dataStores//globalKeys.properties");
-prop.load(fis);
+Properties prop = globalData.file();
 String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
 //prop.getProperty("browser");
 if (browserName.equalsIgnoreCase("chrome"))   {
@@ -50,15 +48,57 @@ driver.manage().window().maximize();
 }
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 return driver;
+}   */
+	
+// For Practice
+public WebDriver driver;
+public landingPage lp;
+public WebDriver browserKickOff() throws IOException   {
+Properties prop = globalData.file();
+String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
+//String browserName = prop.getProperty("browser");
+if (browserName.equalsIgnoreCase("chrome"))   {
+WebDriverManager.chromedriver().setup();
+driver = new ChromeDriver();
+driver.manage().window().maximize();
+}
+else if (browserName.equalsIgnoreCase("firefox"))   {
+WebDriverManager.firefoxdriver().setup();
+driver = new FirefoxDriver();
+}
+else {
+WebDriverManager.edgedriver().setup();
+driver = new EdgeDriver();
+driver.manage().window().maximize();
+}
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+return driver;
 }
 
+/*
 @BeforeMethod
 public landingPage launchBrowser() throws IOException   {
 driver = browserKickOff();
 lp = new landingPage(driver);
 lp.goTo();
 return lp;
+}   */
+
+// For Practice
+@BeforeMethod
+public landingPage launchBrowser() throws IOException   {
+driver = browserKickOff();	
+lp = new landingPage(driver);
+lp.goTo();
+return lp;
+
 }
+
+/*
+@AfterMethod
+public void quitDriver()   {
+driver.quit();	
+}   */
 
 @AfterMethod
 public void quitDriver()   {

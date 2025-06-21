@@ -1,6 +1,8 @@
 package mvnFrameWorks;
 
 import java.io.IOException;
+import java.util.Properties;
+
 import org.junit.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -9,6 +11,7 @@ import utilities.cartPg;
 import utilities.checkOutPg;
 import utilities.confirmPg;
 import utilities.excelUtility;
+import utilities.globalData;
 import utilities.invokingBrowser;
 import utilities.orderPg;
 import utilities.prdCatalogues;
@@ -42,7 +45,10 @@ public class shoppingOrder5Test extends invokingBrowser{
 
  @DataProvider
  public Object[][] loginData() throws IOException   {
- Object [][] exlTestData = excelUtility.readFromExcel(System.getProperty("user.dir")+"//src//main//java//dataStores//testData3.xlsx", "LoginDetails");	 
+ Properties prop = globalData.file(); 
+ Object [][] exlTestData = 
+    excelUtility.readFromExcel(System.getProperty("user.dir")
+	   +prop.getProperty("excelpath"), prop.getProperty("sheet"));	 
  return exlTestData;
  }
 

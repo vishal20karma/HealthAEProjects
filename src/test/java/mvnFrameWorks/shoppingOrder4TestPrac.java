@@ -3,6 +3,7 @@ package mvnFrameWorks;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 import org.junit.Assert;
 import org.testng.annotations.DataProvider;
@@ -11,6 +12,7 @@ import org.testng.annotations.Test;
 import utilities.cartPg;
 import utilities.checkOutPg;
 import utilities.confirmPg;
+import utilities.globalData;
 import utilities.invokingBrowser;
 import utilities.jsonUtility;
 import utilities.orderPg;
@@ -45,10 +47,10 @@ public class shoppingOrder4TestPrac extends invokingBrowser{
 
  @DataProvider
  public Object[][] getData() throws IOException   {
+ Properties prop = globalData.file();
  Object[][] data = jsonUtility.getJsonData(System.getProperty("user.dir")
-		 +"//src//main//java//dataStores//testData.json");
+		 +prop.getProperty("jsonpath"));
  return data;
-
  }
  
 }

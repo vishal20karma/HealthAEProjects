@@ -13,13 +13,21 @@ import com.aventstack.extentreports.Status;
 
 public class listeners extends invokingBrowser implements ITestListener{
 
-	ExtentReports extent = extentRep.extentReports();   //This need to practice multiple times to get logic
+/*	ExtentReports extent = extentRep.extentReports();   //This need to practice multiple times to get logic
+	ExtentTest test;
+	ThreadLocal<ExtentTest> tl = new ThreadLocal<ExtentTest>();   */
+
+//  For practice
+	ExtentReports extent = extentRep.extentReports();
 	ExtentTest test;
 	ThreadLocal<ExtentTest> tl = new ThreadLocal<ExtentTest>();
+	
 	
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
+/*	test = extent.createTest(result.getMethod().getMethodName());
+	tl.set(test);   */
 	test = extent.createTest(result.getMethod().getMethodName());
 	tl.set(test);
 	}
@@ -27,6 +35,7 @@ public class listeners extends invokingBrowser implements ITestListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
+/*	tl.get().log(Status.PASS, "TEST PASS");   */
 	tl.get().log(Status.PASS, "TEST PASS");
 	}
 
